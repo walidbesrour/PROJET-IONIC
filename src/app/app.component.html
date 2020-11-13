@@ -1,0 +1,54 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu>
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title>Use Cases</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item [routerLink]="p.url">
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <ion-list>
+          <ion-list-header color="medium">Module Loading Startegies</ion-list-header>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of moduleLoadingPages; let i = index">
+            <ion-item [routerLink]="p.url">
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <ion-list>
+          <ion-list-header color="medium">Route Guards</ion-list-header>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of routeGuardsPages; let i = index">
+            <ion-item [routerLink]="p.url">
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <ion-list>
+          <ion-list-header color="medium">Route Resolvers</ion-list-header>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of routeResolversPages; let i = index">
+            <ion-item [routerLink]="p.url">
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
